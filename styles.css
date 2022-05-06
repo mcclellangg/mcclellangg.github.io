@@ -1,14 +1,14 @@
 /* Global Settings */
 body {
   min-height: 100vh;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
-  background-color: #36393F;
-  color: #E5F3FF;
+  font-family: var(--font-sans);
+  background-color: var(--navy);
+  color: var(--slate);
   max-width: 400px;
-  padding: 4px;
+  padding: 12px;
   margin-left: auto;
   margin-right: auto;
+  line-height: 1.3;
 }
 
 a {
@@ -27,12 +27,30 @@ img {
   height: auto;
 }
 
+:root {
+  --dark-navy: #020c1b;
+  --navy: #0a192f;
+  --light-navy: #112240;
+  --lightest-navy: #233554;
+  --navy-shadow: rgba(2,12,27,0.7);
+  --dark-slate: #495670;
+  --slate: #8892b0;
+  --light-slate: #a8b2d1;
+  --lightest-slate: #ccd6f6;
+  --white: #e6f1ff;
+  --green: #64ffda;
+  --green-tint: rgba(100,255,218,0.1);
+  --pink: #f57dff;
+  --blue: #57cbff;
+  --font-sans: "Calibre","Inter","San Francisco","SF Pro Text",-apple-system,system-ui,sans-serif;
+  --font-mono: "SF Mono","Fira Code","Fira Mono","Roboto Mono",monospace;
+}
+
 /* Utility Classes */
 .container {
     border: 1px solid none;
     max-width: 100%;
-    margin-left: auto;
-    margin-right: auto;
+    margin: 0 auto 25%;
 }
 
 .flex-wrapper {
@@ -42,12 +60,14 @@ img {
 
 h2.description {
   text-decoration: underline;
+  color: var(--lightest-slate);
 }
 
 .sub-text {
-  margin: 1rem;
+  margin: 10%;
   padding: 1rem;
   font-size: 24px;
+  text-align: center;
 }
 
 .border {
@@ -55,33 +75,44 @@ h2.description {
 }
 /* Splash Card */
 .splash-card {
-    /* border: 1px solid hotpink; */
-    display: flex;
-    flex-direction: column;
-    text-align: center;
-    max-width: 80%;
-    margin-top: 6rem;
-    margin-left: auto;
-    margin-right: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  max-width: 100%;
+  height: 100vh;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .splash-card .blurb {
   padding: 1.5rem;
+  font-size: 18px;
 }
 
 .intro {
   margin: 0px;
-  font-size: 2rem;
+  font-size: 1.5rem;
   text-align: left;
+  color: var(--green);
+  font-family: var(--font-mono);
 }
 
-.introName {
+.intro-name {
   margin-top: 0px;
   font-size: 4rem;
+  font-weight: 700;
+  color: var(--lightest-slate);
+  line-height: 1.1;
+  font-family: var(--font-sans);
+}
+
+.tech {
+  font-family: var(--font-mono);
 }
 
 .link-container {
-    border: 1px solid white;
+    border: 1px solid var(--green);
     border-radius: 8px;
     display: flex;
     margin-top: 4rem;
@@ -92,17 +123,28 @@ h2.description {
   padding: 6px;
   display: flex;
   justify-content: center;
+  color: var(--lightest-slate);
+}
+
+.icon-wrapper:hover {
+  color: var(--green);
 }
 
 /* Projects */
+.proj-sub-text {
+  margin: 0 auto 10%;
+  padding: 1rem;
+  font-size: 24px;
+  text-align: left;
+}
+
 .proj-card {
-  border: 2px solid white;
+  border: 2px solid var(--lightest-slate);
   border-radius: 8px;
   display: flex;
   max-width: 100%;
   padding: 1.5rem;
-  margin: .6em;
-  margin-top: 8rem;
+  margin: 0 auto 200px;
 }
 
 .proj-card .info {
@@ -118,7 +160,7 @@ h2.description {
 
 .proj-link-wrap {
   max-width: 250px;
-  border: 1px solid white;
+  border: 1px solid var(--green);
   border-radius: 8px;
   display: flex;
   align-self: center;
@@ -127,7 +169,14 @@ h2.description {
 
 .proj-card .info h3 {
   text-decoration: underline;
-  font-size: 1.5rem;
+  font-size: 26px;
+  font-weight: 700;
+  color: var(--light-slate);
+}
+
+.content-info {
+  font-size: 17px;
+  font-weight: 500;
 }
 
 .proj-card .img-wrapper {
@@ -143,15 +192,28 @@ h2.description {
   gap: 20px;
 }
 
+/* mailto */
+.email-link {
+  color: var(--green);
+  background-color: transparent;
+  border: 1px solid var(--green);
+  border-radius: 8px;
+  padding: 1.25rem 1.75rem;
+  line-height: 1;
+  text-decoration: none;
+  cursor: pointer;
+}
+
 /* Footer */
 footer {
   text-align: center;
+  margin-top: 25%;
 }
 
 /* Media Queries */
 @media screen and (min-width: 800px) {
   body {
-    max-width: 800px;
+    max-width: 875px;
   }
 
   .responsive-wrapper {
