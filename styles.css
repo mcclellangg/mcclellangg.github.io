@@ -171,7 +171,7 @@ h2.description {
   text-decoration: underline;
   font-size: 26px;
   font-weight: 700;
-  color: var(--light-slate);
+  color: var(--lightest-slate);
 }
 
 .content-info {
